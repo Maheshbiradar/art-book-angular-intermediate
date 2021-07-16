@@ -10,6 +10,7 @@ import { ArtItemComponent } from './art-gallery/art-list/art-item/art-item.compo
 import { ArtShoppingCartComponent } from './art-shopping-cart/art-shopping-cart.component';
 import { ShoppingCartEditComponent } from './art-shopping-cart/shopping-cart-edit/shopping-cart-edit.component';
 import { appDropdownDirective } from './directives/dropdown-directive';
+import { CartService } from './services/cart.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { appDropdownDirective } from './directives/dropdown-directive';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

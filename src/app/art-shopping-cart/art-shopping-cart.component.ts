@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ArtMeterial } from '../art-gallery/models/art-material-model';
+import { ArtService } from '../services/art.service';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-art-shopping-cart',
@@ -7,17 +9,14 @@ import { ArtMeterial } from '../art-gallery/models/art-material-model';
   styleUrls: ['./art-shopping-cart.component.css']
 })
 export class ArtShoppingCartComponent implements OnInit {
-  artMaterials: ArtMeterial[] = [
-    new ArtMeterial("Test1", 300),
-    new ArtMeterial("Test2", 600)
-  ];
-  constructor() { }
+  artMaterials: ArtMeterial[];
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
-  }
-
-  onaddCartItemAdded(artMaterial: ArtMeterial) {
-    this.artMaterials.push(artMaterial);
+    this.artMaterials = this.cartService.getArtMaterials();
+    this.cartService.artMaterialsChanged.subscribe((artMaterials:ArtMeterial[]) => {
+      this.artMaterials = artMaterials;
+    })
   }
 
 }
