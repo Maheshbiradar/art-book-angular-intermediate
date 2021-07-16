@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ArtService } from 'src/app/services/art.service';
 import { Art } from '../models/art.model';
 
 @Component({
@@ -7,20 +8,13 @@ import { Art } from '../models/art.model';
   styleUrls: ['./art-list.component.css']
 })
 export class ArtListComponent implements OnInit {
-  @Output() artWasSelected = new EventEmitter<Art>();
+  arts: Art[];
 
-  arts: Art[] = [
-    new Art("Test1 Art", "This is test description", "https://lh6.ggpht.com/HlgucZ0ylJAfZgusynnUwxNIgIp5htNhShF559x3dRXiuy_UdP3UQVLYW6c"),
-    new Art("Test2 Art", "This is test description", "https://www.graphicsprings.com/filestorage/stencils/1f4e948fcfc9977ee6fb567bd815132d.png?width=500&height=500"),
-  ]
-
-  constructor() { }
+  constructor(private artService: ArtService) {   
+   }
 
   ngOnInit(): void {
-  }
-
-  onArtSeleted(art: Art) {
-    this.artWasSelected.emit(art);
+    this.arts = this.artService.getArts();
   }
 
 }

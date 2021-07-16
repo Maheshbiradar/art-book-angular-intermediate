@@ -7,8 +7,7 @@
   <div class="row">
     <div class="col-xs-12">      
       <app-art-item  
-        *ngFor="let artEl of arts" [art] = 'artEl'
-        (selectedArt) = "onArtSeleted(artEl)">
+        *ngFor="let artEl of arts" [art] = 'artEl'>
     </app-art-item>
     </div>
   </div>

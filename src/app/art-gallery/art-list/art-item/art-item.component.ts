@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
+import { ArtService } from 'src/app/services/art.service';
 import { Art } from '../../models/art.model';
 
 @Component({
@@ -8,15 +9,13 @@ import { Art } from '../../models/art.model';
 })
 export class ArtItemComponent implements OnInit {
   @Input() art: Art;
-  @Output() selectedArt = new EventEmitter<void>();
-
-  constructor() { }
+  constructor(private artService: ArtService) { }
 
   ngOnInit(): void {
   }
 
   onSelectArt() {
-    this.selectedArt.emit();
+    this.artService.selectedArt.emit(this.art);
   }
 
 }
