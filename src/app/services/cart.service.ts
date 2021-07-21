@@ -1,5 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { ArtMeterial } from '../art-gallery/models/art-material-model';
+import { ArtMeterial } from '../models/art-material-model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,4 +21,10 @@ export class CartService {
   getArtMaterials() {
     return this.artMaterials.slice();
   }
+
+  addArtMaterials(materials: ArtMeterial[]) {
+    this.artMaterials.push(...materials);
+    this.artMaterialsChanged.emit(this.artMaterials.slice());
+  }
+
 }

@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ArtMeterial } from 'src/app/art-gallery/models/art-material-model';
+import { ArtMeterial } from 'src/app/models/art-material-model';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({

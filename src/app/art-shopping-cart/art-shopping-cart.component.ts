@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ArtMeterial } from '../art-gallery/models/art-material-model';
-import { ArtService } from '../services/art.service';
+import { ArtMeterial } from '../models/art-material-model';
 import { CartService } from '../services/cart.service';
 
 @Component({

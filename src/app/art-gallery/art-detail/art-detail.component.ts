@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Art } from '../models/art.model';
+import { ArtService } from 'src/app/services/art.service';
+import { Art } from '../../models/art.model';
 
 @Component({
   selector: 'app-art-detail',
@@ -9,9 +10,13 @@ import { Art } from '../models/art.model';
 export class ArtDetailComponent implements OnInit {
   @Input() newSelectedArt: Art;
   
-  constructor() { }
+  constructor(private artService: ArtService) { }
 
   ngOnInit(): void {
+  }
+
+  onAddToCart(){
+    this.artService.addArtMaterialsToCart(this.newSelectedArt.artMaterials);
   }
 
 }
