@@ -6,8 +6,7 @@ import { CartService } from './cart.service';
 @Injectable({
   providedIn: 'root'
 })
-export class ArtService {
-  selectedArt =  new EventEmitter<Art>();  
+export class ArtService { 
   arts: Art[] = [
     new Art("Test1 Art", "This is test description", "https://lh6.ggpht.com/HlgucZ0ylJAfZgusynnUwxNIgIp5htNhShF559x3dRXiuy_UdP3UQVLYW6c", 
     [
@@ -21,6 +20,10 @@ export class ArtService {
 
   getArts() {
     return this.arts.slice();
+  }
+
+  getArtFromId(index: number) {
+    return this.arts[index];
   }
 
   constructor(private cartService: CartService) { }

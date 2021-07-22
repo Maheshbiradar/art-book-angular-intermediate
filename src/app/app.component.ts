@@ -7,9 +7,5 @@ import { Event } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {  
-  current: String = 'art';
-
-  onNavigate(event: String) {
-    this.current = event;
-  }
+  
 }

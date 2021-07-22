@@ -9,13 +9,11 @@ import { Art } from '../../../models/art.model';
 })
 export class ArtItemComponent implements OnInit {
   @Input() art: Art;
+  @Input() index: number;
+  
   constructor(private artService: ArtService) { }
 
   ngOnInit(): void {
-  }
-
-  onSelectArt() {
-    this.artService.selectedArt.emit(this.art);
   }
 
 }

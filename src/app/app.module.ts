@@ -11,6 +11,9 @@ import { ArtShoppingCartComponent } from './art-shopping-cart/art-shopping-cart.
 import { ShoppingCartEditComponent } from './art-shopping-cart/shopping-cart-edit/shopping-cart-edit.component';
 import { appDropdownDirective } from './directives/dropdown-directive';
 import { CartService } from './services/cart.service';
+import { AppRoutingModule } from './routes/app-routing.module';
+import { ArtStarterComponent } from './art-gallery/art-starter/art-starter.component';
+import { EditArtComponent } from './art-gallery/edit-art/edit-art.component';
 
 @NgModule({
   declarations: [
@@ -22,10 +25,13 @@ import { CartService } from './services/cart.service';
     ArtItemComponent,
     ArtShoppingCartComponent,
     ShoppingCartEditComponent,
-    appDropdownDirective
+    appDropdownDirective,
+    ArtStarterComponent,
+    EditArtComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [CartService],
   bootstrap: [AppComponent]

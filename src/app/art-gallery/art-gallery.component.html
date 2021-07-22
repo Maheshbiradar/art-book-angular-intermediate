@@ -3,11 +3,5 @@
         <app-art-list></app-art-list>
     </div>
     <div class="col-md-5">
-        <app-art-detail 
-            *ngIf = "selectedArt; else infoText" 
-            [newSelectedArt] = "selectedArt">            
-        </app-art-detail>
-        <ng-template #infoText>
-            <p>Please select Art!</p>
-        </ng-template>        
+       <router-outlet></router-outlet>     
     </div>

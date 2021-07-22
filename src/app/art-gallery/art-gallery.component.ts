@@ -13,9 +13,6 @@ export class ArtGalleryComponent implements OnInit {
 
   constructor(private artService: ArtService) { }
 
-  ngOnInit(): void {
-    this.artService.selectedArt.subscribe((art: Art) => {
-      this.selectedArt = art;
-    })
+  ngOnInit(): void {    
   }
 }
